@@ -1,0 +1,20 @@
+{% extends 'post_layout.html' %}
+
+{% block title %}
+All posts
+{% endblock %}
+{% block content %}
+<div class ="container">
+
+
+    <ul style="padding:80px">
+    {% for i in instance %}
+        <div class="card shadow p-3 mb-5 bg-white rounded">
+        <i><h1>{{i.title}}</h1><h3><small>{{i.timestamp}}</small></h3><br>
+            <p>{{i.content}}</p></i>
+        </div>
+        <br><br>
+    {% endfor %}
+    </ul>
+    </div>
+{% endblock content %}
