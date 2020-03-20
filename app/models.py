@@ -8,3 +8,9 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse("app:post_detail")
+
+    class Meta:
+        ordering =['-timestamp', '-updated']
