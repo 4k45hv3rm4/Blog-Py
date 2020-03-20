@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 class Post(models.Model):
     title   = models.CharField(max_length=120)
     content = models.TextField()
@@ -10,7 +10,7 @@ class Post(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("app:post_detail")
+        return reverse("app:post_detail", args=[str(self.id)])
 
     class Meta:
         ordering =['-timestamp', '-updated']
